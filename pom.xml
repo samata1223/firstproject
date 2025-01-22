@@ -11,6 +11,7 @@
 	<groupId>com.tericcabrel</groupId>
 	<artifactId>authoz</artifactId>
 	<version>1.1.0-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>authoz</name>
 	<description>Service for user management, token generation and validation</description>
 
@@ -136,6 +137,14 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			 <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.1</version>
+                <configuration>
+                    <!-- Optional: Configure Web resources, filter files, etc. -->
+                </configuration>
+            </plugin>
 		</plugins>
 	</build>
 
@@ -148,6 +157,7 @@
 			<properties>
 				<build.profile.id>dev</build.profile.id>
 				<currentProfile>dev</currentProfile>
+				<packaging>war</packaging>
 			</properties>
 		</profile>
 		<profile>
@@ -155,6 +165,7 @@
 			<properties>
 				<build.profile.id>prod</build.profile.id>
 				<currentProfile>prod</currentProfile>
+				<packaging>war</packaging>
 			</properties>
 		</profile>
 		<profile>
@@ -162,6 +173,7 @@
 			<properties>
 				<build.profile.id>test</build.profile.id>
 				<currentProfile>test</currentProfile>
+				<packaging>war</packaging>
 			</properties>
 		</profile>
 	</profiles>
